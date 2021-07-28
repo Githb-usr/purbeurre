@@ -49,7 +49,7 @@ def show_search_result(request):
         product_search_by_barcode = Product.objects.filter(barcode=cleaned_query[0])
         # We look for matches with all the words
         for i in range(len(cleaned_query)):
-            product_search_by_name = Product.objects.filter(designation__unaccent__icontains=cleaned_query[i]).order_by('nutriscore')
+            product_search_by_name = Product.objects.filter(designation__unaccent__icontains=cleaned_query[i]).order_by('-nutriscore')
         # getting the desired page number from url
         page_number = request.GET.get('page', 1)
         paginator = Paginator(product_search_by_name, 6)
