@@ -68,7 +68,11 @@ function deleteSubstitute(id) {
     const myHeaders = new Headers();
     myHeaders.append("X-CSRFToken", getCookie('csrftoken'));
     myHeaders.append("Content-Type", "application/json");
-    const request = new Request('/user/delete_substitutes/', {method: 'POST', headers: myHeaders, body: {substituteId: id}}) 
+    const request = new Request('/user/delete_substitutes/', {
+        method: 'POST',
+        headers: myHeaders,
+        body: {substituteId: id}
+    }) 
 
     fetch('/user/delete_substitutes/', {
         method: 'POST',
