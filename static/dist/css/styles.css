@@ -11109,6 +11109,7 @@ main section div div .card-body {
 .product-img {
   height: 19rem;
   width: 100%;
+  object-fit: contain;
   margin: 0 auto;
   padding: 1rem;
 }

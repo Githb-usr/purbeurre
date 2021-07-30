@@ -118,7 +118,8 @@ class FirefoxFunctionalTestCases(StaticLiveServerTestCase):
         # We submit form
         self.driver.find_element_by_css_selector("section.login-main-section form button").click()
 
-        # To know if we have been redirected to the home page after login, we look for a specific tag for this page
+        # To know if we have been redirected to the home page after login, we look for a specific
+        # tag for this page
         class_to_find = self.driver.find_element_by_class_name("index-about-title")
         # We check that the chosen tag contains a text that is only found on the home page
         self.assertEqual(
