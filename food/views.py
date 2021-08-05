@@ -112,9 +112,10 @@ def show_substitute_choice_list(request, barcode):
                         .order_by('nutriscore').distinct()
 
     existing_substitutes = [];
-    favourite_substitutes_with_initial_product = Substitute.objects.filter(
-        initial_product=initial_product.id
-        )
+    current_user_id = request.user.id
+    favourite_substitutes_with_initial_product = Substitute.objects\
+    .filter(initial_product=initial_product.id)\
+    .filter(users__id=current_user_id)
 
     if favourite_substitutes_with_initial_product:
         for fav in favourite_substitutes_with_initial_product:
