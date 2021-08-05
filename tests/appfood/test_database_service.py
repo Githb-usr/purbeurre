@@ -19,7 +19,7 @@ class BaseTest(TestCase):
 
         return super().setUp()
 
-class ApiDataCleanerTestCase(BaseTest):
+class DatabaseServiceTestCase(BaseTest):
 
     def test_populate_database_with_products(self):
         self.database_service.populate_database_with_products()
