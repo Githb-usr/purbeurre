@@ -79,7 +79,9 @@ def saved_substitutes_view(request):
         substitute = Substitute.objects.filter(initial_product_id=initial_product_id, substituted_product_id=substituted_product_id)
 
         # If the substitute does not already exist in the favourites, it is added.
-        if not substitute.exists():
+        current_user_id = request.user.id
+        current_user_substitutes = Substitute.objects.filter(users__id=current_user_id)
+        if substitute not in current_user_substitutes:
             initial_product = Product.objects.filter(pk=initial_product_id)
             substituted_product = Product.objects.filter(pk=substituted_product_id)
             substitute = Substitute(
