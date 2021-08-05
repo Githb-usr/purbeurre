@@ -57,7 +57,8 @@ def saved_substitutes_view(request):
         We display the substitutes favourites page
         :return: a template with all the user's favourites
     """
-    favourites = Substitute.objects.all().order_by("-creation_date")
+    current_user_id = request.user.id
+    favourites = Substitute.objects.filter(users__id=current_user_id).order_by("-creation_date")
     page_number = request.GET.get('page')
     paginator = Paginator(favourites, 6)
     
