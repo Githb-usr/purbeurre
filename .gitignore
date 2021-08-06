@@ -1,6 +1,7 @@
 .env
 .vscode
 __pycache__
+debug.log
 envp8/
 get-pip.py
 static/node_modules
