@@ -49,7 +49,7 @@ def show_search_result(request):
         product_search_by_barcode = Product.objects.filter(barcode=cleaned_query[0])
         # We look for matches with all the words
         for i in range(len(cleaned_query)):
-            product_search_by_name = Product.objects.filter(designation__unaccent__icontains=cleaned_query[i]).order_by('-nutriscore')
+            product_search_by_name = Product.objects.filter(designation__unaccent__icontains=cleaned_query[i]).order_by('-nutriscore')[:50]
         # getting the desired page number from url
         page_number = request.GET.get('page', 1)
         paginator = Paginator(product_search_by_name, 6)
@@ -109,7 +109,7 @@ def show_substitute_choice_list(request, barcode):
     initial_product_categories = initial_product.categories.all()
     substitute_search = Product.objects.filter(categories__in=initial_product_categories)\
                         .filter(nutriscore__lt=initial_product.nutriscore)\
-                        .order_by('nutriscore').distinct()
+                        .order_by('nutriscore').distinct()[:50]
 
     existing_substitutes = [];
     current_user_id = request.user.id
