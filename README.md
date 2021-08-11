@@ -52,6 +52,10 @@ The application is online. The user can search for a product to be relocated dir
   - [python3] manage.py migrate
 * Populating the database:
   - [python3] manage.py import_data
+* Run the application locally
+  - [python3] manage.py runserver
+* Run the tests
+  - [python3] manage.py test tests
 
 # EXAMPLE OF JSON RESPONSE FROM OPEN FOOD FACTS API #
 JSON can contain several results but only the first one is shown in the examples
