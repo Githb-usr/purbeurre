@@ -31,6 +31,24 @@ The application is online. The user can search for a product to be relocated dir
 * Code written entirely in English: functions, variables, comments, etc.
 * Use an agile project methodology to work in project mode.
 
+# DEPLOYMENT #
+* PostGreSQL must be installed on the server, with "unaccent" extension.
+* Create a "purbeurre" database and a user with password
+* Creating a virtual environment with Python 3.8
+* Clone the application
+* Run the following command to install the necessary libraries : pip install -r requirements.txt
+* Create an .env file with these environment variables (replace the xxx with your values):
+  DJANGO_SETTINGS_MODULE=config.settings
+  SECRET_KEY=xxx
+  DB_NAME=xxx
+  DB_USER=xxx
+  DB_PASSWORD=xxx
+  DB_HOST=xxx
+  DB_PORT=xxx
+* Generate the static files: [python3] manage.py collectstatic
+* Create the database tables: [python3] manage.py migrate
+* Populating the database: [python3] manage.py import_data
+
 # EXAMPLE OF JSON RESPONSE FROM OPEN FOOD FACTS API #
 JSON can contain several results but only the first one is shown in the examples
 
