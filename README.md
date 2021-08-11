@@ -38,13 +38,13 @@ The application is online. The user can search for a product to be relocated dir
 * Clone the application
 * Run the following command to install the necessary libraries : pip install -r requirements.txt
 * Create an .env file with these environment variables (replace the xxx with your values):
-  DJANGO_SETTINGS_MODULE=config.settings
-  SECRET_KEY=xxx
-  DB_NAME=xxx
-  DB_USER=xxx
-  DB_PASSWORD=xxx
-  DB_HOST=xxx
-  DB_PORT=xxx
+  * DJANGO_SETTINGS_MODULE=config.settings
+  * SECRET_KEY=xxx
+  * DB_NAME=xxx
+  * DB_USER=xxx
+  * DB_PASSWORD=xxx
+  * DB_HOST=xxx
+  * DB_PORT=xxx
 * Generate the static files: [python3] manage.py collectstatic
 * Create the database tables: [python3] manage.py migrate
 * Populating the database: [python3] manage.py import_data
